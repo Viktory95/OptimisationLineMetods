@@ -4,6 +4,7 @@
 public class Newton {
     double U0;
     double Capacity = 10e-2;
+    double k=0;
     double[] U = new double[10];
 
 

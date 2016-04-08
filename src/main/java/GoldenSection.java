@@ -2,7 +2,7 @@
  * Created by Ivan on 04.03.2016.
  */
 public class GoldenSection {
-    int iteration = 0;
+    public int iteration = 0;
     double Left,Right;
     double Capacity = 10e-2;
     double Alfa = (Math.sqrt(5)-1)/2;
@@ -10,8 +10,9 @@ public class GoldenSection {
     double U1 = Left + Alfa1*(Right - Left);
     double U2 = Left + Alfa*(Right - Left);
     double FunctionValue1, FunctionValue2;
+    public double FunctionResult;
 
-    private void Recoursive(){
+    public void Recoursive(){
         iteration++;
         FunctionValue1=MakeFunction(U1);
         FunctionValue2=MakeFunction(U2);
@@ -42,7 +43,7 @@ public class GoldenSection {
             Recoursive();
         }else{
             double UResult=(Right+Left)/2;
-            double FunctionResult=MakeFunction(UResult);
+            FunctionResult=MakeFunction(UResult);
         }
 
     }

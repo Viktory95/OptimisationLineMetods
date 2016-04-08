@@ -8,12 +8,18 @@ public class OptimithationMetod extends JFrame {
     private JPanel OM;
     private JPanel leftPanel;
     private JPanel rightPanel;
-    private JPanel topPanel;
-    private JTextArea textArea1;
-    private JTextArea textArea2;
+    public JTextArea textArea1;
+    public JTextArea textArea2;
     private JTextArea textArea3;
     private JTextArea textArea4;
-    private JButton button1;
+    public JButton tapButton;
+    public JTextArea textArea5;
+    public JTextArea textArea6;
+    private JTextArea textArea7;
+    private JTextArea textArea8;
+    public JTextArea textArea9;
+    public JTextArea textArea10;
+    private JPanel bottomPanel;
 
 
     public OptimithationMetod(){

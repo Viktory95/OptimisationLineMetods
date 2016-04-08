@@ -2,15 +2,15 @@
  * Created by Ivan on 26.02.2016.
  */
 public class HalfLine {
-    int iteration =0;
+    public int iteration = 0;
     double Left,Right;
     double Capacity = 10e-2;
     double deviation = 0.2;
     double FunctionValue1, FunctionValue2;
     double U1,U2;
+    public double FunctionResult;
 
-
-    private void Recoursive(){
+    public void Recoursive(){
         iteration++;
         U1=(Right+Left-deviation)/2;
         U2=(Right+Left+deviation)/2;
@@ -26,11 +26,11 @@ public class HalfLine {
                 Left=U1;
             }
         }
-        if(Right-Left>=Capacity){
+        if(Right-Left>=deviation){
             Recoursive();
         }else{
             double UResult=(Right+Left)/2;
-            double FunctionResult=MakeFunction(UResult);
+            FunctionResult=MakeFunction(UResult);
         }
     }
 
