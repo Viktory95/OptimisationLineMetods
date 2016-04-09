@@ -10,20 +10,22 @@ import java.awt.geom.Arc2D;
 public class Main {
     public static void main(String[] args){
         OptimithationMetod optimithationMetod =new OptimithationMetod(); //Экземпляр класса окна
-        ButtonActionListner actionListner = new ButtonActionListner(); //Экземпляр слушателя кнопки
-        System.out.println(optimithationMetod.getContentPane().getX()+optimithationMetod.getContentPane().getY());
+      //  ButtonActionListner actionListner = new ButtonActionListner(); //Экземпляр слушателя кнопки
+       // System.out.println(optimithationMetod.getContentPane().getX()+optimithationMetod.getContentPane().getY());
       //optmithationMetod.setVisible(true);
-        optimithationMetod.tapButton.addActionListener(actionListner);//Подключение слушателя к кнопке
+       // optimithationMetod.tapButton.addActionListener(actionListner);//Подключение слушателя к кнопке
     }
 }
 
-class ButtonActionListner implements ActionListener {
+/*class ButtonActionListner implements ActionListener {
     HalfLine HL = new HalfLine(); //Экземпляр класса метода деления отрезка пополам
     GoldenSection GS = new GoldenSection(); //Экземпляр класса метода золотого сечения
     OptimithationMetod optimithationMetod =new OptimithationMetod();
     public void actionPerformed(ActionEvent e) {
+        System.out.println(optimithationMetod.textArea9.getText());
         HL.Left = Double.parseDouble(optimithationMetod.textArea9.getText());
         HL.Right = Double.parseDouble(optimithationMetod.textArea10.getText());
+        System.out.println(HL.Left);
         HL.Recoursive();
         GS.Recoursive();
         optimithationMetod.textArea1.append(Integer.toString(HL.iteration));
@@ -33,4 +35,4 @@ class ButtonActionListner implements ActionListener {
         optimithationMetod.textArea6.append(Double.toString(GS.FunctionResult));
     }
 
-}
+}*/

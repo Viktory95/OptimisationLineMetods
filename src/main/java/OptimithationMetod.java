@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Ivan on 26.02.2016.
@@ -29,6 +31,36 @@ public class OptimithationMetod extends JFrame {
         setLocationRelativeTo(null);
         setSize(100, 100);
         pack();
+        tapButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                HalfLine HL = new HalfLine(); //Экземпляр класса метода деления отрезка пополам
+                GoldenSection GS = new GoldenSection(); //Экземпляр класса метода золотого сечения
+                Parabola P = new Parabola();
+
+                HL.Left = Double.parseDouble(textArea9.getText());
+                HL.Right = Double.parseDouble(textArea10.getText());
+
+                GS.Left = Double.parseDouble(textArea9.getText());
+                GS.Right = Double.parseDouble(textArea10.getText());
+
+                P.U1 = Double.parseDouble(textArea9.getText());
+                P.U3 = Double.parseDouble(textArea10.getText());
+                P.U2 = (P.U3 - P.U1)/2;
+
+                HL.Recoursive();
+                GS.Recoursive();
+                P.Recoursive();
+
+                textArea1.setText(Integer.toString(HL.iteration));
+                textArea5.setText(Double.toString(HL.FunctionResult));
+
+                textArea2.setText(Integer.toString(GS.iteration));
+                textArea6.setText(Double.toString(GS.FunctionResult));
+
+                textArea3.setText(Integer.toString(P.iteration));
+                textArea7.setText(Double.toString(P.FunctionResult));
+            }
+        });
        // textArea1 = new JTextArea();
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);

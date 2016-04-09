@@ -3,9 +3,13 @@
  */
 public class Parabola {
    double U1,U2,U3;
-   double W=U2+((U3-U2)*(U3-U2)*(MakeFunction(U1)-MakeFunction(U2))-(U2-U1)*(U2-U1)*(MakeFunction(U3)-MakeFunction(U2))/2*((U3-U2)*MakeFunction(U1)-MakeFunction(U2)+(U2-U1)*MakeFunction(U3)-MakeFunction(U2)));
+   double W;
+   double FunctionResult;
+   int iteration = 0;
 
     public void Recoursive(){
+        iteration++;
+        W=U2+((U3-U2)*(U3-U2)*(MakeFunction(U1)-MakeFunction(U2))-(U2-U1)*(U2-U1)*(MakeFunction(U3)-MakeFunction(U2))/2*((U3-U2)*MakeFunction(U1)-MakeFunction(U2)+(U2-U1)*MakeFunction(U3)-MakeFunction(U2)));
         if (W < U2){
             if(MakeFunction(W) < MakeFunction(U2)){
                 U1 = U1;
@@ -55,7 +59,9 @@ public class Parabola {
             }
         }
         if (W == U2){
-            //??????????????????????????
+            FunctionResult = MakeFunction(U2);
+        }else{
+            Recoursive();
         }
     }
 
