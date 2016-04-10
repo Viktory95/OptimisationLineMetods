@@ -4,8 +4,8 @@
 public class HalfLine {
     int iteration =0;
     double Left,Right;
-    double Capacity = 10e-3;
-    double deviation = 0.01;
+    double Capacity;
+    double deviation;
     double FunctionValue1, FunctionValue2;
     double U1,U2;
     double FunctionResult;

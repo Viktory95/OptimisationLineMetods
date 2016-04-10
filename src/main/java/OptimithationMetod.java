@@ -22,6 +22,8 @@ public class OptimithationMetod extends JFrame {
     public JTextArea textArea9;
     public JTextArea textArea10;
     private JPanel bottomPanel;
+    private JTextArea textArea11;
+    private JTextArea textArea12;
 
 
     public OptimithationMetod(){
@@ -36,6 +38,7 @@ public class OptimithationMetod extends JFrame {
                 HalfLine HL = new HalfLine(); //Экземпляр класса метода деления отрезка пополам
                 GoldenSection GS = new GoldenSection(); //Экземпляр класса метода золотого сечения
                 Parabola P = new Parabola();
+                Newton N = new Newton();
 
                 HL.Left = Double.parseDouble(textArea9.getText());
                 HL.Right = Double.parseDouble(textArea10.getText());
@@ -45,11 +48,21 @@ public class OptimithationMetod extends JFrame {
 
                 P.U1 = Double.parseDouble(textArea9.getText());
                 P.U3 = Double.parseDouble(textArea10.getText());
-                P.U2 = (P.U3 - P.U1)/2;
+                P.U2 = (P.U3 - P.U1)/2/* - 0.0028*/;
+
+                N.U = Double.parseDouble(textArea9.getText());
+
+                HL.deviation = Double.parseDouble(textArea11.getText());
+                HL.Capacity = Double.parseDouble(textArea12.getText());
+
+                GS.deviation = Double.parseDouble(textArea11.getText());
+
+                N.Capacity = Double.parseDouble(textArea12.getText());
 
                 HL.Recoursive();
                 GS.Recoursive();
                 P.Recoursive();
+                N.Recoursive();
 
                 textArea1.setText(Integer.toString(HL.iteration));
                 textArea5.setText(Double.toString(HL.FunctionResult));
@@ -59,6 +72,9 @@ public class OptimithationMetod extends JFrame {
 
                 textArea3.setText(Integer.toString(P.iteration));
                 textArea7.setText(Double.toString(P.FunctionResult));
+
+                textArea4.setText(Integer.toString(N.iteration));
+                textArea8.setText(Double.toString(N.FunctionResult));
             }
         });
        // textArea1 = new JTextArea();

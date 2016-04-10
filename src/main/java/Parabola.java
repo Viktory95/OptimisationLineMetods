@@ -7,8 +7,11 @@ public class Parabola {
    double FunctionResult;
    int iteration = 0;
 
+
+
     public void Recoursive(){
         iteration++;
+        Make3();
         W=U2+((U3-U2)*(U3-U2)*(MakeFunction(U1)-MakeFunction(U2))-(U2-U1)*(U2-U1)*(MakeFunction(U3)-MakeFunction(U2))/2*((U3-U2)*MakeFunction(U1)-MakeFunction(U2)+(U2-U1)*MakeFunction(U3)-MakeFunction(U2)));
         if (W < U2){
             if(MakeFunction(W) < MakeFunction(U2)){
@@ -68,5 +71,15 @@ public class Parabola {
     private double MakeFunction(double u){
         double Function=Math.pow(u,5)-3*Math.pow(u,3)-2*u+1;
         return Function;
+    }
+
+    private void Make3(){
+        double DeltaM = MakeFunction(U1)-MakeFunction(U2);
+        double DeltaP = MakeFunction(U3)-MakeFunction(U2);
+        if (DeltaM>=0 && DeltaP>=0 && DeltaM + DeltaP >0){
+             System.out.println(DeltaM+"   "+DeltaP);
+        }else{
+            U2+=0.0001;
+        }
     }
 }

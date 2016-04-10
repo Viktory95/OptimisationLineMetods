@@ -4,7 +4,7 @@
 public class GoldenSection {
     public int iteration = 0;
     double Left,Right;
-    double deviation = 0.01;
+    double deviation;
     double Alfa = (Math.sqrt(5)-1)/2;
     double Alfa1 = (3-Math.sqrt(5))/2;
     double U1;
